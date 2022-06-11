@@ -41,7 +41,7 @@ jobs:
       APP_NAME: ${{ secrets.APP_NAME }}
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
       EMAIL: ${{ secrets.EMAIL }}
-      HEROKU_V2RAY_UUID: ${{ secrets.HEROKU_V2RAY_UUID }}
+      HEROKU_UUID: ${{ secrets.HEROKU_UUID }}
       HEROKU_TUNNEL_TOKEN: ${{ secrets.HEROKU_TUNNEL_TOKEN }}
     steps:
       - run: |
@@ -58,9 +58,9 @@ jobs:
       - id: EMAIL_is_empty
         if: ${{ env.EMAIL == ''}}
         run: echo EMAIL is empty
-      - id: HEROKU_V2RAY_UUID_is_empty
-        if: ${{ env.HEROKU_V2RAY_UUID == ''}}
-        run: echo HEROKU_V2RAY_UUID is empty
+      - id: HEROKU_UUID_is_empty
+        if: ${{ env.HEROKU_UUID == ''}}
+        run: echo HEROKU_UUID is empty
       - id: HEROKU_TUNNEL_TOKEN_is_empty
         if: ${{ env.HEROKU_TUNNEL_TOKEN == ''}}
         run: echo HEROKU_TUNNEL_TOKEN is empty
